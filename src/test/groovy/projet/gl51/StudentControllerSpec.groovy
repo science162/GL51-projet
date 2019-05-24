@@ -22,8 +22,8 @@ class StudentControllerSpec extends Specification {
         def response = client.toBlocking().exchange("/student", Argument.listOf(Student).type)
         expect:
         response.status == HttpStatus.OK
-        response.body()[1].firstname == "Regis"
-        response.body()[1].lastname == "Mouaffo"
+        response.body()[0].firstname == "Vanessa"
+        response.body()[0].lastname == "Tuete"
         println(response.body)
 
     }
