@@ -2,7 +2,7 @@ language: groovy
 
 before_install:
  - chmod +x gradlew
-
+ 
 jdk:
  - oraclejdk8
 
@@ -11,3 +11,4 @@ after_success:
 
 after_failure:
   - ./gradlew clean check --debug
+
