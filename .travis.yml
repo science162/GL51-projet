@@ -3,5 +3,11 @@ language: groovy
 before_install:
  - chmod +x gradlew
 
- after_success:
+jdk:
+ - oraclejdk8
+
+after_success:
  - ./gradlew jacocoTestReport coveralls
+
+after_failure:
+  - ./gradlew clean check --debug
