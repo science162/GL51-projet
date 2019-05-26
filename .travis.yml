@@ -8,3 +8,6 @@ before_install:
  
   after_success:
  - ./gradlew jacocoTestReport coveralls
+ 
+ after_failure:
+  - ./gradlew clean check --debug
