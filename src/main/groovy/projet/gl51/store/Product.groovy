@@ -7,5 +7,4 @@ class Product {
     double price
     double idealTemperature
 
-
 }

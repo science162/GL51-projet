@@ -3,8 +3,6 @@ package projet.gl51.store
 
 interface ProductStorage {
 
-
-
     /**
 
      * creates an new product in the store
@@ -27,8 +25,6 @@ interface ProductStorage {
 
     void update(String id, Product p)
 
-
-
     /**
 
      * get a product by its id
@@ -41,8 +37,6 @@ interface ProductStorage {
 
     Product getByID(String id)
 
-
-
     /**
 
      * deletes a product by its id
@@ -52,8 +46,6 @@ interface ProductStorage {
      */
 
     void delete(String id)
-
-
 
     /**
 

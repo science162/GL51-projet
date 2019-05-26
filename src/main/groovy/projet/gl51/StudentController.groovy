@@ -5,7 +5,6 @@ import io.micronaut.http.annotation.Get
 
 
 @Controller("/student")
-
 class StudentController {
 
     @Get("/")
