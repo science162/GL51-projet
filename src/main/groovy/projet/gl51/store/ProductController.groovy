@@ -18,7 +18,6 @@ class ProductController {
 
     /**
      * get all product
-     *
      * @return a list of product
      */
     @Get("/")
