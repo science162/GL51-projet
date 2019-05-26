@@ -37,6 +37,7 @@ class ProductController {
             return inMemory.getByID(id)
         } catch (Exception e) {
             e.printStackTrace()
+            HttpStatus.NOT_FOUND
         }
     }
 
@@ -57,13 +58,8 @@ class ProductController {
      */
     @Delete(uri ="/{id}" )
     HttpStatus delete(String id){
-        try {
             inMemory.delete(id)
-            return HttpStatus.OK
-        } catch (Exception e) {
-            e.printStackTrace()
-            return HttpStatus.NOT_FOUND
-        }
+            HttpStatus.OK
     }
 
     /**
@@ -74,7 +70,7 @@ class ProductController {
     @Patch(uri ="/update" )
     HttpStatus update(@Body Product product) {
         inMemory.update(product.id,product)
-        return HttpStatus.OK
+        HttpStatus.OK
     }
 
 
