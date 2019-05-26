@@ -7,10 +7,6 @@ import io.micronaut.http.annotation.Delete
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Patch
 import io.micronaut.http.annotation.Post
-import io.micronaut.http.annotation.Produces
-import io.micronaut.http.MediaType
-import io.micronaut.http.client.exceptions.HttpClientResponseException
-
 import javax.inject.Inject
 
 
@@ -20,17 +16,14 @@ class ProductController {
     @Inject
     ProductStorage inMemory
 
-
     /**
      * get all product
-     *
      * @return a list of product
      */
     @Get("/")
     List<Product> allProduct(){
         inMemory.all()
     }
-
 
     /**
      * get a product by its id
@@ -45,9 +38,7 @@ class ProductController {
             e.printStackTrace()
             HttpStatus.NOT_FOUND
         }
-
     }
-
 
     /**
      * save a product
@@ -59,7 +50,6 @@ class ProductController {
         inMemory.save(product)
     }
 
-
     /**
      * delete a product
      * @param product
@@ -67,17 +57,9 @@ class ProductController {
      */
     @Delete(uri ="/{id}" )
     HttpStatus delete(String id){
-        try {
             inMemory.delete(id)
-            return HttpStatus.OK
-
-        } catch (Exception e) {
-            e.printStackTrace()
-            return HttpStatus.NOT_FOUND
-        }
-
+            HttpStatus.OK
     }
-
 
     /**
      * update a product
@@ -87,7 +69,7 @@ class ProductController {
     @Patch(uri ="/update" )
     HttpStatus update(@Body Product product) {
         inMemory.update(product.id,product)
-        return HttpStatus.OK
+        HttpStatus.OK
     }
 
 
